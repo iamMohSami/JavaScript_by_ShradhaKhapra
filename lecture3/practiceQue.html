@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice lec-3</title>
+</head>
+<body>
+    <h1>Inspect Console for Result</h1>
+    <script>
+        // Qs1. Print all even numbers from 0 to 100.
+        for(let i = 0 ; i<=100 ; i++) {
+            if(i%2 === 0) {
+                console.log(i) ;
+            }
+        }
+
+       /* Create a game where you start with any random game number. Ask the user to keep guessing the game number until the user enters correct value. */ 
+       let gameNum = 63 ;
+       let num = parseInt(prompt("Guess the Number :")) ;
+       let attempt = 1 ;
+       while( num != gameNum  ) {
+        num = parseInt(prompt("Wrong Input , Guess again :")) ;
+        attempt++ ;
+       }
+       console.log("Hurray..!! You guessed the Number Correctly in" , attempt , "attempts") ;
+
+
+       // Qs2 . Prompt the user to enter their full name. Generate a username for them based on the input Start username with @, followed by their full name and ending with the fullname length.eg: userinput =“shradhakhapra” , username should be “@shradhakhapra13”
+
+       let name = prompt("Enter you Full name") ; 
+       let at =  "@" ; 
+       console.log(`Your UserName is : ${at + name + name.length}` ) ;
+
+    </script>
+</body>
+</html>

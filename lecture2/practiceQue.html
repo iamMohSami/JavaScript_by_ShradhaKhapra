@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice Question lec-2</title>
+</head>
+<body>
+    <h1>Inspect Console for Result</h1>
+
+
+    
+    <script>
+    /* Q1 . Get user to input a number using prompt(“Enter a number:) Check if the number is
+    a multiple of 5 or not. */ 
+
+
+// VERY IMPORTANT 
+    //Prompt is always stored as String, so we typecast it to INT
+
+    let num = parseInt(prompt("Enter a number : ")) ;
+    if(num === 0){
+        console.log("You Entered 0 which is not a multiple of 5");
+    }
+    else if(num%5 === 0){
+        console.log("Yipee..!! Number" , num , "is a multiple of 5");
+    }
+    else{
+        console.log("Nayyyy..Number" , num , "is NOT a multiple of 5");
+    }
+
+    let marks = parseInt(prompt("Enter your marks")) ;
+    if(marks >=90 && marks <=100) {
+        console.log("Grade = A") ;
+    }
+    else if(marks >=70 && marks <=89) {
+        console.log("Grade = B") ;
+    }
+    else if(marks >=50 && marks <=69) {
+        console.log("Grade = c") ;
+    }
+    else {
+        console.log("FAIL") ;
+    }
+
+
+
+
+    </script>
+</body>
+</html>
