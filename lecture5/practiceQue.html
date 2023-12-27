@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Ques lecture 5</title>
+</head>
+<body>
+    <h1>Inspect Console for Result</h1>
+
+    <script>
+        //Que1. Create a function using the “function” keyword that takes a String as an argument &returns the number of vowels in the string 
+
+        function countVowel (str) {
+            let value = 0 ;
+            vowelArray = ['a' ,'e' , 'i' , 'o' , 'u' , 'A' , 'E' , 'I' , 'O', 'U'] ;  
+            for(element of str) {
+                for (item of vowelArray) {
+                    if (element === item) {
+                        value++ ;
+                    }
+                }
+            }
+            return value ;
+        }
+        let myStr = prompt("Enter the String for Que 1:")  ;
+        let result = countVowel(myStr) ; 
+        console.log(`The number of Vowels in ${myStr} are : ${result}`) ;
+
+        // Que2. Create an arrow function to perform the same task. 
+
+        let myFunc = (str) => {
+            let value = 0 ;
+            vowelArray = ['a' ,'e' , 'i' , 'o' , 'u' , 'A' , 'E' , 'I' , 'O', 'U'] ;  
+            for(element of str) {
+                for (item of vowelArray) {
+                    if (element === item) {
+                        value++ ;
+                    }
+                }
+            }
+            return value ;
+        }
+
+        let myStr2 = prompt("Enter the String for Que2:")  ;
+        let result2 = myFunc(myStr2) ; 
+        console.log(`The number of Vowels in ${myStr2} are : ${result2}`) ;
+
+        // Que3. For a given array of numbers, print the square of each value using the forEach loop. 
+        let myArr = [1,2,3,4,5,6,7,8,9] ; 
+
+        myArr.forEach( (element)=> {
+          console.log(element*element) ; 
+        });
+
+        // Also we know that forEach is a HOF, thus passing function as a parameter   
+
+        myArr = [1,2,3,4,5,6,7,8,9] ;  
+
+        let calcSquare = (num) => {
+            console.log(num*num)
+        } 
+
+        myArr.forEach(calcSquare) ;
+
+        // Que4. We are given array of marks of students. Filter out of the marks of students that scored 90+
+
+        let marks = [91,87,45,69,97,89,90,96,93,41,72,63,99] ; 
+        let marksMorethan90 = marks.filter((val) => {
+                return val>90 ; 
+        });
+        console.log(marksMorethan90) ;
+
+        /* Que5. Take a number n as input from user. Create an array of numbers from 1 to n.
+            Use the reduce method to calculate sum of all numbers in the array.
+            Use the reduce method to calculate product of all numbers in the array. */ 
+
+        let n = parseInt(prompt("Enter a Number for Ques5 :")) ; 
+        let myArray = [] ; 
+        for(let i=1 ; i<=n ; i++) {
+            myArray[i-1] = i ; 
+        }
+        console.log(`Our Array is : ${myArray}`) ;
+        console.log(myArray) ;
+
+        let mySum = myArray.reduce((prev,curr) => {
+                return prev+curr ; 
+        });
+        console.log(`The Sum is : ${mySum}`) ;
+
+        let myProd = myArray.reduce((prev,curr) => {
+                return prev * curr ; 
+        });
+        console.log(`The Product is : ${myProd}`) ;
+        
+
+
+
+    </script>
+</body>
+</html>
