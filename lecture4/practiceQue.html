@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Question</title>
+  </head>
+
+  <body>
+    <h1>Inspect Console for Result</h1>
+    <script>
+      //Que1. For a given array with marks of students -> [85, 97, 44, 37, 76, 60] Find the average marks of the entire class.
+
+      let marks = [85, 97, 44, 37, 76, 60];
+      let number = marks.length; //number = 6
+      let sum = 0;
+      for (mark of marks) {
+        sum += mark;
+      }
+      let avg = sum / number;
+      console.log(`The Class Average marks is : ${avg}`);
+
+      // Que2. For a given array with prices of 5 items -> [250, 645, 300, 900, 50] All items have an offer of 10% OFF on them. Change the array to store final price after applying offer.
+
+      // let prices = [250,645,300,900,50] ;
+      // for (price of prices) {
+      //     disc = price * 0.1;
+      //     price -= disc ;
+      // }
+      // console.log(`The Array after Discount is : ${prices}`) ;
+
+/*  IMPORTANT = 
+The issue in your code is that you are using a for...of loop, which iterates over the elements of the array, and then you are modifying the price variable directly. However, doing so does not update the original array.*/
+
+      let prices = [250, 645, 300, 900, 50];
+      for (let i = 0; i < prices.length; i++) {
+        let disc = prices[i] * (10 / 100);
+        prices[i] -= disc;
+      }
+      console.log(`The Array after Discount is : ${prices}`);
+
+
+
+    /* Que3. Qs. Create an array to store companies -> “Bloomberg",“Microsoft”,"Uber",“Google”,“IBM”,"Netflix" . 
+
+    a. Remove the first company from the array
+    b. Remove Uber & Add Ola in its place
+    c. Add Amazon at the end */ 
+
+    let companies = ["Bloomberg" , "Microsoft" , "Uber" , "Google" , "IBM" , "Netflix"]; 
+    console.log(companies) ;
+    companies.shift() ; 
+    console.log(companies) ; // a. is DONE
+      // ['Microsoft', 'Uber', 'Google', 'IBM', 'Netflix']
+
+
+    companies.splice(1 , 1 , "Ola") ;
+    console.log(companies) ; // b. is DONE
+    // ['Microsoft', 'Ola', 'Google', 'IBM', 'Netflix']
+
+
+    companies.push("Amazon") ; 
+    console.log(companies) ; // c. is DONE
+    // ['Microsoft', 'Ola', 'Google', 'IBM', 'Netflix' , 'Amazon']
+    </script>
+  </body>
+</html>
