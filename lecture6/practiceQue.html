@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice for DOM Manipulating</title>
+    <style>
+        *{
+            background-color: aqua;
+        }
+        .box{
+            background-color: rgb(212, 212, 36);
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            margin: 10px; 
+            padding: 10px;
+        } 
+    </style>
+  </head>
+  <body>
+    <h3>
+      Homework study about FirstChild, LastChild and access all of the image
+    </h3>
+    <img src="Capture2.PNG" alt="hw pic" height="400px" />
+
+    <!-- Implementing this structure -->
+
+    <div class="mainParent">
+      <div class="firstChildOfMainParent">
+        <p class="firstChildOfAboveDiv">I am first Child of above div</p>
+        <h2 class="secondChildOfAboveDiv">I am Second Child of above div</h2>
+        <span class="lastChildOfAboveDiv">I am last Child of above div</span>
+      </div>
+      <div class="lastChildofMainParent"></div>
+    </div>
+
+    <h3>Learn about Text Node, Comment Node and ELEMENT NODE</h3>
+
+    <h3>
+      Create a H2 heading element with text - “Lionel Messi” Append “is Better
+      than Cristiano Penaldo” to this text using JS.
+    </h3>
+
+    <h2 class="goat">Lionel Messi</h2>
+
+    <h3>
+      Create 3 divs with common class name - “box” . Access them & add some
+      unique text to each of them
+    </h3>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      console.dir(document);
+      let mainParent = document.querySelector("div");
+      console.log(mainParent);
+
+      console.log(mainParent.firstElementChild); //RETURNS A TEXT NODE
+      console.log(mainParent.lastElementChild);
+
+      let newParent = mainParent.firstElementChild;
+      console.log(newParent.firstElementChild);
+      console.log(newParent.lastElementChild);
+
+      let val = document.querySelector(".goat").textContent;
+      let str2 = "is Better than Cristiano Penaldo";
+      let result = `${val} ${str2}`;
+      console.log(result) ;
+      document.querySelector(".goat").textContent = result;
+
+
+      let boxCollection = document.querySelectorAll(".box") ; 
+      console.log(boxCollection) ;
+      boxCollection[0].innerHTML = "<h3>Text of First Box</h3>" ;
+      boxCollection[1].innerHTML = "<p> Text of Second Box</p>" ;
+      boxCollection[2].innerHTML = "<button>Yess..!</button>" ;
+    </script>
+  </body>
+</html>
