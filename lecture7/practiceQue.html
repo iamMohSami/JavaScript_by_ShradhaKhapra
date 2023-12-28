@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Que for HTML 7</title>
+    <style>
+      * {
+        background-color: aqua;
+      }
+      .Content {
+        color: white;
+      }
+
+      /* creating styles for new class */
+      .newClass {
+        background-color: green;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Homework : Study about appendChild() and removeChild()</h1>
+    <h3>
+      appendChild() and removeChild() are two DOM (Document Object Model)
+      methods in JavaScript used to manipulate the structure of HTML documents
+      by adding or removing elements. The appendChild() method is used to append
+      a node as the last child of a specified parent node. It adds a node to the
+      end of the list of children of a specified parent node. The removeChild()
+      method is used to remove a specified child node from the DOM. It removes a
+      child node from the parent node.
+    </h3>
+
+    <div
+      id="parent"
+      style="height: 200px; width: 200px; border: 2px solid black"
+    >
+      <p>This is the parent element.</p>
+      <p id="child">This is the child element to be removed.</p>
+    </div>
+
+    <h3>
+      Differences bw .append() and .appendChild() || .remove() and
+      .removeChild()
+    </h3>
+    appendChild() vs. .append() <br />
+    Return Value: appendChild() returns the appended child node. This can be
+    useful if you want to keep a reference to the appended node. .append() does
+    not return a value.
+    <br />
+    Multiple Arguments: appendChild() accepts a single node as an argument. If
+    you want to append multiple nodes, you need to call it multiple times.
+    .append() accepts multiple arguments and appends each of them. This can make
+    it more concise when dealing with multiple elements. <br />
+    <br />
+    <br />
+    removeChild() vs. .remove() <br />
+    Return Value: removeChild() returns the removed child node. Similar to
+    appendChild(), this can be useful if you want to keep a reference to the
+    removed node. .remove() does not return a value. <br />
+    Syntax: removeChild() requires a reference to the parent node and the child
+    node to be removed. .remove() can be called directly on the child node
+    without requiring a reference to the parent.
+
+    <h1>
+      Que1. Create a new button element. Give it a text “click me” , background
+      color of red & text color of white.Insert the button as the first element
+      inside the body tag
+    </h1>
+
+    <h1>
+      Que2.Create a paragraph tag in html, give it a class & some styling. Now
+      create a new class in CSS and try to append this class to the paragraph
+      element. Did you notice, how you overwrite the class name when you add a
+      new one using setAttr? Solve this problem using classList.
+    </h1>
+
+    <p class="Content">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus cumque
+      architecto explicabo unde. Laborum consequuntur quaerat expedita beatae
+      nemo, quas est cupiditate sunt veritatis suscipit earum aliquam dolorum
+      enim a neque? Corrupti enim, dicta tempore possimus ducimus iusto saepe
+      hic ipsam ipsa repellendus. Deserunt tempore iure iusto atque sunt
+      impedit?
+    </p>
+
+    <script>
+      // HOMEWORK
+
+      // Create a new element
+      let newElement = document.createElement("p");
+      newElement.textContent = "This is the appended child.";
+
+      // Get the parent node
+      let parentElement = document.getElementById("parent");
+
+      // Append the new element to the parent
+      parentElement.appendChild(newElement);
+      console.log(parentElement.appendChild(newElement));
+      //THus it prints "<p>This is the appended child.</p>" in console as unlike node.append , this method node.appendChild returns the appended child node and can be logged on the console
+
+      let newElement2 = document.createElement("p");
+      newElement2.textContent = "This is the appended second child.";
+      parentElement.append(newElement2);
+      console.log(parentElement.append(newElement2));
+      //This will print undefined in consoloe as using only .append does not return anything
+
+      // Get the child node to be removed
+      let childElement = document.getElementById("child");
+
+      // Remove the child element from the parent
+      parentElement.removeChild(childElement);
+
+      //Que2
+
+      let newButton = document.createElement("button");
+      newButton.innerText = "click me";
+      newButton.style.backgroundColor = "red";
+      newButton.style.color = "white";
+
+      document.querySelector("body").prepend(newButton);
+
+      // Que3
+      //lets try adding by newClass using setAttribute
+
+      let elem = document.querySelector(".Content");
+      /*
+      console.log(elem.getAttribute("class")) ; //output : content
+      elem.setAttribute("class" , "newClass");
+      console.log(elem.getAttribute("class")) ; //output : newclass
+      */
+      // THUS, HERE THE OLD CLASS OF COTENT IS OVERWRITTEN, AND WE HAVE ONLY ONE NEWCLASS TO THE ELEM
+      // But, we want both the classes, we want to append newClass to Content
+      // Thus. we use classList method
+
+      console.log(elem);
+      console.log(elem.classList); //Returns an DOMToken List with all classes as form of list
+      // DOMTokenList object that represents the classes of the specified element. The DOMTokenList is similar to an array, and it provides methods to add, remove, toggle, and check for the presence of classes.
+
+      /* To add in a classList : use node.classList.add() 
+        To remove in a classList : use node.classList.remove() */
+
+        elem.classList.add("newClass") ;
+        console.log(elem.classList);
+    </script>
+  </body>
+</html>
