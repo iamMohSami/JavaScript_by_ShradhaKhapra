@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            background-color: aqua;
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: dodgerblue;
+            border: 2px solid black;
+            color: white;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h3>What are JS Events?</h3>
+    <h3>onclick attribute/Event of Button</h3>
+    <h3>ondblclick "OnDoubleClick" event of a button</h3>
+    <h3>onmouseover event of mouse</h3>
+    <h3>Read about more events on mdn docs</h3>
+    <h3>Inline Event Handling is not preferred due to bulkyness of HTML</h3>
+    <h3>Priority : JAVASCRIPT EVENT HANDLING > INLINE EVENT HANDLING</h3>
+    <h3>Event Object and its 4 imp properties</h3>
+    <h3>Event Listeners || You can attach multiple event listeners to a single event, allowing for more modular and maintainable code</h3>
+    <h3>node.addEventListener AND node.removeEventListener</h3>
+
+
+
+
+
+
+    
+
+
+    <!-- This is INLINE EVENT HANDLING -->
+    <button onclick="console.log (' Button is Clicked.!' ) ; " >Click Me.!</button>
+    <button onclick="alert('Hello Bro..!!')">Say Hello..!</button>
+    <button ondblclick="console.log('button was clicked 2x')" >Click me 2 times</button>
+    <div class="box" onmouseover="console.log('Your mouse cursor Entered the Div ');">Hover your mouse inside this div and check console</div>  
+
+    <!-- writing EVENT HANDLING through JS  -->
+    <button id="mybtn">btn1</button>
+    <button id="btn2">btn2</button>
+    <button id="btn3">btn3</button>
+
+
+
+
+
+    <script src="eight.js"></script>
+</body>
+</html>
