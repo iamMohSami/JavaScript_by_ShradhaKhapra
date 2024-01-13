@@ -1,8 +1,8 @@
 // alert("First Alert")
 // alert("Please Open your Console for checking console log output..!!")
 
-console.log("Assalam Walekum wa Rahmatullahi wa Barqaakathu") ;
-console.log("Inshallah, Lets Master JAVASCRIPT") ;
+console.log("Hey JS") ;
+console.log("Lets Master JAVASCRIPT") ;
 console.log("JAVASCRIPT gives you SuperPowers..!!!") ; 
 
 // VARIABLES are like Containers used to store data
