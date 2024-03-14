@@ -1,0 +1,69 @@
+# APPROACH TO CURRENCY CONVERTOR PROJECT 
+
+## Overview
+The Currency Converter project aims to provide a simple and user-friendly interface for users to convert currency values. The project is developed using HTML, CSS, and JavaScript, with additional country code information stored in a separate JavaScript file and using an online API for latest currency exchange rates.
+
+## File Structure
+
+- `index.html`: The main HTML file containing the structure of the currency converter interface.
+- `styles.css`: The CSS file responsible for styling the HTML elements.
+- `app.js`: The main JavaScript file handling the logic and functionality of the currency converter.
+- `countrycodes.js`: A JavaScript file containing a list of currency codes for different countries.
+
+## External Libraries
+
+- Font Awesome: Used for currency exchange arrow icons.
+  [Font Awesome](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)
+
+
+- Flags API: Utilized to display country flags corresponding to currency codes.
+  [Flags API](https://flagsapi.com/)
+
+## Workflow
+
+1. User Input : Users enter the amount, select the source currency, and choose the target currency.
+2. Validation: The input is validated to ensure a numerical amount is entered.
+3. Currency Exchange API: Exchange rates are fetched from a currency exchange API based on the selected
+   currencies.
+4. Calculation: The amount is converted based on the exchange rate.
+5. Display Results: The converted amount is displayed to the user.
+
+## HTML Structure
+
+1. Create a div with class container which will have our entire convertor box.
+2. In this div , a header and a form 
+3. In form , we have 3 divs, amount,dropdown, msg and a Submit Button 
+4. In amount div, a "Enter Amount" para and an input field 
+5. In dropdown , we have 3 things , FROM div , an exchange icon , TO div , 
+In from div, a "From" para and a div with flag image and a select tag : similar with "To" para
+
+## CSS Styling
+
+/*
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #675bfe;
+}*/ 
+
+The Body is set as "flex" and jc and ai to "center", thus our main container comes to the center of the webpage. Using min-height is preferred because it provides flexibility for dynamic content. If the content is less than the viewport height, the body takes up the entire viewport. If the content exceeds the viewport height, the body expands accordingly. This is especially useful for responsive designs where the amount of content may vary based on screen size or other factors.
+
+/*
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 55vh;
+  min-width: 35vw;
+}
+*/
+Styled the Container and provided it min-height and min-width
+
+/*
+
+## JavaScript Logic
+
+The `app.js` file contains the logic for fetching currency exchange rates, handling user input, and updating the interface dynamically. It utilizes the `countrycodes.js` file to populate the dropdowns with country flags and currency codes.
+
